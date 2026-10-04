@@ -1,6 +1,6 @@
 {
   "name": "@gbesse/jev-meteo-vigilance-brief",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Transforme un bulletin officiel de vigilance en briefing opérationnel adapté à un contexte déclaré.",
   "type": "module",
   "license": "MIT",
