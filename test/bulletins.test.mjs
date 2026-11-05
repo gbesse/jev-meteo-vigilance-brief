@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {selectBulletinsAt}from '../src/index.mjs';const p={area:'test',issuedAt:'2026-11-05T00:00:00Z',validFrom:'2026-11-05T00:00:00Z',validUntil:'2026-11-06T00:00:00Z',hazards:['wind']};
+test('expiry exclusive and absence unknown',()=>{const x=selectBulletinsAt([p],p.validUntil);assert.deepEqual(x.areas,[]);assert.equal(x.absenceMeansNoHazard,false);});
+test('future publication not used',()=>assert.deepEqual(selectBulletinsAt([{...p,issuedAt:'2026-11-05T12:00:00Z'}],'2026-11-05T01:00:00Z').areas,[]));
+test('latest revision and detached receipt',()=>{const r={...p,issuedAt:'2026-11-05T01:00:00Z',hazards:[]};const x=selectBulletinsAt([p,r],'2026-11-05T02:00:00Z');x.areas[0].hazards.push('x');assert.deepEqual(r.hazards,[]);});

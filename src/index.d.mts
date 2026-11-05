@@ -7,3 +7,5 @@ export const DECISIONS: Readonly<Record<Decision, string>>;
 export function vigilanceBriefCase(input: unknown): SourceRecord;
 export function assessVigilanceBrief(input: unknown, provider: JevProvider): Promise<DecisionResult>;
 export function runCli(argv: string[], io?: { log(value: string): void }): Promise<void>;
+
+export function selectBulletinsAt(bulletins:Array<{area:string;issuedAt:string;validFrom:string;validUntil:string;hazards:unknown[]}>,asOf:string):{asOf:string;areas:Array<{area:string;issuedAt:string;validFrom:string;validUntil:string;hazards:unknown[]}>;absenceMeansNoHazard:boolean};

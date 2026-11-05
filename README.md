@@ -105,3 +105,12 @@ npm run demo:parcours
 La CI exécute les vérifications principales sous Node.js 22 et 24.
 
 Projet indépendant, sans affiliation avec TypeSafe AI, data.gouv.fr ni l’administration française. Consultez la [documentation de l’API Jev](https://docs.typesafe.ai/api) et les [limites du modèle](https://docs.typesafe.ai/model-jaggedness/jev-1.13).
+
+
+## 2026-11-05 — FR / EN / ES
+
+FR : `selectBulletinsAt(bulletins, asOf)` sélectionne la dernière publication fournie active par zone, avec intervalle [validFrom, validUntil[. N’utilise pas un bulletin publié dans le futur ; absence de bulletin n’est pas absence de risque. Export normalisé, sans connexion Météo-France.
+
+EN: `selectBulletinsAt(bulletins, asOf)` selects the latest supplied active publication per area using [validFrom, validUntil). Future publications are excluded; missing bulletin does not mean no hazard. Normalized export, no Météo-France connection.
+
+ES: `selectBulletinsAt(bulletins, asOf)` selecciona última publicación aportada activa por zona con [validFrom, validUntil). Excluye publicaciones futuras; boletín ausente no significa ausencia de riesgo. Exportación normalizada sin conexión Météo-France.
